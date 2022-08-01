@@ -1,0 +1,8 @@
+web profil
+1. API get all komoditas -> foto, nama, nama ilmiah, deskripsi
+2. API get all umkm -> foto, nama, deskripsi singkat
+3. API get umkm by id -> foto utama, foto gallery, nama produk, keterangan produk, link
+
+web blog
+1. API get blog by id -> foto, judul, isi, rangkuman singkat, tanggal publish, tag, rekomendasi, isPinned, like count
+2. rekomendasi blog
