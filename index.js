@@ -6,8 +6,11 @@ require('dotenv').config()
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.get('/', () => {
+app.get('/', (_, res) => {
 	console.log("hore");
+	res.json({
+		message: "hore"
+	})
 })
 
 app.get('/table', db.createTables)
