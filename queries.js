@@ -121,4 +121,4 @@ module.exports = {
 	createKomoditas,
 	getUmkm,
 	getUmkmById
-};
+}; 
