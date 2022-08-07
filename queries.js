@@ -2,10 +2,10 @@ const Pool = require('pg').Pool
 
 const createTables = (req, res) => {
 	const pool = new Pool({
-		user: process.env.PUSER,
-		host: process.env.PHOST,
-		database: process.env.PDATABASE,
-		password: process.env.PPASSWORD,
+		user: process.env.USER,
+		host: process.env.HOST,
+		database: process.env.DATABASE,
+		password: process.env.PASSWORD,
 		port: process.env.PORT,
 	})
 	pool.query('CREATE TABLE Komoditas(KomoditasID integer, Nama varchar(255), NamaIlmiah varchar(255), Deskripsi varchar(255), Foto varchar(255))', (err, res) => {
@@ -27,10 +27,10 @@ const createTables = (req, res) => {
 const createKomoditas = (req, res) => {
 	const { id, nama, namaIlmiah, deskripsi, foto } = req.body
 	const pool = new Pool({
-		user: process.env.PUSER,
-		host: process.env.PHOST,
-		database: process.env.PDATABASE,
-		password: process.env.PPASSWORD,
+		user: process.env.USER,
+		host: process.env.HOST,
+		database: process.env.DATABASE,
+		password: process.env.PASSWORD,
 		port: 5432,
 	})
 	// console.log(id, nama, namaIlmiah, deskripsi, foto);
@@ -45,10 +45,10 @@ const createKomoditas = (req, res) => {
 
 const getKomoditas = (req, res) => {
 	const pool = new Pool({
-		user: process.env.PUSER,
-		host: process.env.PHOST,
-		database: process.env.PDATABASE,
-		password: process.env.PPASSWORD,
+		user: process.env.USER,
+		host: process.env.HOST,
+		database: process.env.DATABASE,
+		password: process.env.PASSWORD,
 		port: 5432,
 	})
 	pool.query('SELECT * FROM Komoditas ORDER BY KomoditasId ASC', (err, results) => {
@@ -63,10 +63,10 @@ const getKomoditas = (req, res) => {
 const getKomoditasById = (req, res) => {
 	const id = parseInt(req.params.id)
 	const pool = new Pool({
-		user: process.env.LUSER,
-		host: process.env.LHOST,
-		database: process.env.LDATABASE,
-		password: process.env.LPASSWORD,
+		user: process.env.USER,
+		host: process.env.HOST,
+		database: process.env.DATABASE,
+		password: process.env.PASSWORD,
 		port: 5432,
 	})
 	pool.query('SELECT * FROM Komoditas WHERE KomoditasId = $1', [id], (err, results) => {
@@ -81,10 +81,10 @@ const getKomoditasById = (req, res) => {
 
 const getUmkm = (req, res) => {
 	const pool = new Pool({
-		user: process.env.LUSER,
-		host: process.env.LHOST,
-		database: process.env.LDATABASE,
-		password: process.env.LPASSWORD,
+		user: process.env.USER,
+		host: process.env.HOST,
+		database: process.env.DATABASE,
+		password: process.env.PASSWORD,
 		port: 5432,
 	})
 	pool.query('SELECT * FROM umkm', (err, results) => {
@@ -99,10 +99,10 @@ const getUmkm = (req, res) => {
 const getUmkmById = (req, res) => {
 	const id = parseInt(req.params.id)
 	const pool = new Pool({
-		user: process.env.LUSER,
-		host: process.env.LHOST,
-		database: process.env.LDATABASE,
-		password: process.env.LPASSWORD,
+		user: process.env.USER,
+		host: process.env.HOST,
+		database: process.env.DATABASE,
+		password: process.env.PASSWORD,
 		port: 5432,
 	})
 	pool.query('SELECT * FROM umkm WHERE UmkmId = $1', [id], (err, results) => {
