@@ -1,14 +1,18 @@
 const express = require('express');
 const app = express()
 const db = require('./queries')
+require('dotenv').config()
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+app.get('/table', db.createTables)
+
 app.get('/komoditas', db.getKomoditas)
 app.get('/komoditas/:id', db.getKomoditasById)
+app.post('/komoditas', db.createKomoditas)
 app.get('/umkm', db.getUmkm)
-app.get('/umkm/:id', db.getUmkmId)
+app.get('/umkm/:id', db.getUmkmById)
 
 app.listen(8080, () => {
 	console.log("running on port 8080");
