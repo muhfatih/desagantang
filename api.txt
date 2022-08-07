@@ -6,3 +6,18 @@ web profil
 web blog
 1. API get blog by id -> foto, judul, isi, rangkuman singkat, tanggal publish, tag, rekomendasi, isPinned, like count
 2. rekomendasi blog
+
+queries database
+CREATE TABLE Komoditas (
+    KomoditasID int,
+    Nama varchar(255),
+    NamaIlmiah varchar(255),
+    Deskripsi varchar(255),
+    Foto varchar(255)
+);
+CREATE TABLE Umkm (
+    UmkmID int,
+    Nama varchar(255),
+    DeskripsiSingkat varchar(255),
+    Foto varchar(255)
+);
