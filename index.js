@@ -21,6 +21,6 @@ app.post('/komoditas', db.createKomoditas)
 app.get('/umkm', db.getUmkm)
 app.get('/umkm/:id', db.getUmkmById)
 
-app.listen(8080, () => {
+app.listen(process.env.PORT, () => {
 	console.log("running on port 8080");
 })
